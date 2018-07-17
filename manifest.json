@@ -1,0 +1,84 @@
+﻿{
+	"$schema": "https://statics.teams.microsoft.com/sdk/v1.2/manifest/MicrosoftTeams.schema.json",
+	"manifestVersion": "1.2",
+	"version": "1.0.0",
+	"id": "MICROSOFT_APPID",
+	"packageName": "com.example.myapp",
+	"developer": {
+		"name": "Contoso",
+		"websiteUrl": "NGROK_URL",
+		"privacyUrl": "NGROK_URL/privacy",
+		"termsOfUseUrl": "NGROK_URL/app-tos"
+	},
+	"name": {
+		"short": "BOT NAME",
+		"full": "Full name of app, if longer than 30 characters"
+	},
+	"description": {
+		"short": "BOT NAME",
+		"full": "BOT NAME"
+	},
+	"icons": { /* Optional*/
+		"outline": "contoso20x20.png",
+		"color": "contoso96x96.png"
+	},
+	"accentColor": "#60A18E",
+	"configurableTabs": [
+					{
+						"configurationUrl": "NGROK_URL/config",
+						"\",": null,
+						"canUpdateConfiguration": true,
+						"scopes": [ "team" ]
+					}
+	],
+	"staticTabs": [
+					{
+						"entityId": "idForPage",
+						"name": "Display name of tab",
+						"contentUrl": "NGROK_URL",
+
+						"scopes": [ "personal" ]
+					}
+	],
+	"bots": [
+					{
+						"botId": "MICROSOFT_APPID",
+						"needsChannelSelector": false,
+						"isNotificationOnly": false,
+						"scopes": [ "team", "personal" ]
+
+					}
+	],
+
+	"composeExtensions": [
+					{
+						"botId": "MICROSOFT_APPID",
+						"canUpdateConfiguration": true,
+						"commands": [
+							{
+								"id": "exampleCmd",
+								"title": "Example Command",
+								"description": "Command Description; e.g., Search on the web",
+								"initialRun": true,
+								"parameters": [
+									{
+										"name": "keyword",
+										"title": "Search keywords",
+										"description": "Enter the keywords to search for"
+									}
+								]
+							}
+						]
+					}
+	],
+	"permissions": [
+		"identity",
+		"messageTeamMembers"
+	],
+	"validDomains": [
+
+		"NGROK_URL"  /*"7a8c10a2.ngrok.io"*/
+	]
+}
+
+
